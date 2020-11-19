@@ -1,0 +1,1 @@
+### 用spring的ApplicationEventPublisher实现消息发布订阅的例子
