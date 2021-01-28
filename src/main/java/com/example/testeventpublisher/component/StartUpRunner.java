@@ -12,6 +12,7 @@ public class StartUpRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        myEventPublisher.publishGainLogisticsNoEvent("拆单号");
+        myEventPublisher.publishGainLogisticsNoEvent("拆单号1");
+        myEventPublisher.publishCancelOrderEvent("拆单号2");
     }
 }

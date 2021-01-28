@@ -18,12 +18,21 @@ public class MyEventPublisher implements ApplicationEventPublisherAware {
     public void publishGainLogisticsNoEvent(String subOrderNo) {
         try {
             GainLogisticsNoEvent event = new GainLogisticsNoEvent(subOrderNo);
+            event.setSubOrderNo(subOrderNo);
             publisher.publishEvent(event);
         } catch (Exception e) {
            log.error(this.getClass().getName(), e, "发布获得物流单号事件异常");
         }
     }
 
-
+    public void publishCancelOrderEvent(String subOrderNo) {
+        try {
+            CancelOrderEvent event = new CancelOrderEvent(subOrderNo);
+            event.setSubOrderNo(subOrderNo);
+            publisher.publishEvent(event);
+        } catch (Exception e) {
+            log.error(this.getClass().getName(), e, "发布取消订单事件异常");
+        }
+    }
 }
 
